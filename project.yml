@@ -1,0 +1,26 @@
+name: MovieNova
+options:
+  bundleIdPrefix: com.movienova
+  deploymentTarget:
+    iOS: "15.0"
+targets:
+  MovieNova:
+    type: application
+    platform: iOS
+    sources:
+      - MovieNova
+    info:
+      path: MovieNova/Info.plist
+      properties:
+        CFBundleDisplayName: MovieNova
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.movienova.app
+        SWIFT_VERSION: "5.0"
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
