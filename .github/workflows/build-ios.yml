@@ -29,19 +29,14 @@ jobs:
 
       - name: Package IPA
         run: |
-          mkdir Payload
-          cp -R build/Build/Products/Release-iphoneos/MovieNova.app Payload/
-          zip -qr MovieNova.ipa Payload
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: MovieNova-ipa
-          path: MovieNova.ipa
-      - name: Package IPA
-        run: |
           APP=build/Build/Products/Release-iphoneos/MovieNova.app
           codesign --force --sign - --timestamp=none "$APP"
           codesign -dv "$APP"
           mkdir Payload
           cp -R "$APP" Payload/
           zip -qr MovieNova.ipa Payload
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MovieNova-ipa
+          path: MovieNova.ipa
