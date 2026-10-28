@@ -64,7 +64,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
             backButton.widthAnchor.constraint(equalToConstant: 48),
             backButton.heightAnchor.constraint(equalToConstant: 48),
             backButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 16),
-            backButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -24)
+            backButton.topAnchor.constraint(equalTo: guide.topAnchor, constant: 12)
         ])
 
         progressObservation = webView.observe(\.estimatedProgress, options: [.new]) { [weak self] web, _ in
